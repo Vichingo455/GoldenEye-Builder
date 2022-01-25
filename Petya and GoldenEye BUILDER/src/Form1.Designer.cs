@@ -452,6 +452,7 @@
             this.checkBox1.TabIndex = 19;
             this.checkBox1.Text = "You will not run this program on your or someone else\'s PC";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
